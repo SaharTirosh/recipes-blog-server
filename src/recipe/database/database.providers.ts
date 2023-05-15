@@ -2,7 +2,6 @@ import { Sequelize } from 'sequelize-typescript';
 import { Recipe } from './models/Recipe.entity';
 import { Ingredient } from './models/Ingredient.Entity';
 import { Step } from './models/Step.Entity';
-// import { Ingredient, Recipe, Step } from './Recipe.entity';
 
 require('dotenv').config();
 const defaultPort = '3306';
@@ -21,7 +20,6 @@ export const databaseProviders = [
       });
       sequelize.addModels([Step, Recipe, Ingredient]);
       await sequelize.sync();
-      // await sequelize.sync({ force: true });
       return sequelize;
     },
   },

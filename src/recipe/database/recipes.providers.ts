@@ -14,5 +14,5 @@ export const recipeProviders = [
   {
     provide: 'INGREDIENT_REPOSITORY',
     useValue: Ingredient,
-  }
+  },
 ];

@@ -1,30 +1,28 @@
-import { Body, Controller, Get, Inject, Post, forwardRef } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { RecipeService } from './recipe.service';
 import { Recipe } from './database/models/Recipe.entity';
 
-// @ApiTags('recipes')
 @Controller('recipe')
 export class RecipeController {
-    constructor(private recipeService: RecipeService ) {}
+  constructor(private recipeService: RecipeService) {}
 
-
-    // constructor(
-    //     @Inject(forwardRef(() => RecipeService)) private recipeService: RecipeService,
-    //   ) {} 
-
-    // @Get()
-    // getHello(): string {
-    //   return this.recipeService.getHello();
-    // }
-
-    @Post()
-    async addRecipe(@Body() recipe: Recipe): Promise<Recipe> {
+  @Post()
+  async addRecipe(@Body() recipe: Recipe): Promise<Recipe> {
+    try {
+      console.log('Starting to add recipe');
       return this.recipeService.addRecipe(recipe);
-    }
-  
-    @Get()
-    async getAllRecipes(): Promise<Recipe[]> {
-      return this.recipeService.getAllRecipes();
+    } catch (error) {
+      throw new Error('Failed to add new recipe');
     }
   }
+
+  @Get()
+  async getAllRecipes(): Promise<Recipe[]> {
+    try {
+      console.log('Starting to get recipes');
+      return this.recipeService.getAllRecipes();
+    } catch (error) {
+      throw new Error('Failed to get all recipes');
+    }
+  }
+}

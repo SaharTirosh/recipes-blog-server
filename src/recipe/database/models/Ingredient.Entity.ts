@@ -1,6 +1,13 @@
-import { Table, Column, Model, ForeignKey, BelongsTo, AutoIncrement, PrimaryKey } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  ForeignKey,
+  BelongsTo,
+  AutoIncrement,
+  PrimaryKey,
+} from 'sequelize-typescript';
 import { Step } from './Step.Entity';
-
 
 @Table
 export class Ingredient extends Model {

@@ -1,4 +1,13 @@
-import { Table, Column, Model, HasMany, ForeignKey, BelongsTo, AutoIncrement, PrimaryKey } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  HasMany,
+  ForeignKey,
+  BelongsTo,
+  AutoIncrement,
+  PrimaryKey,
+} from 'sequelize-typescript';
 import { Ingredient } from './Ingredient.Entity';
 import { Recipe } from './Recipe.entity';
 
@@ -13,7 +22,10 @@ export class Step extends Model {
   description!: string;
 
   @Column
-  timer!: number;
+  stepOutput: string;
+
+  @Column
+  timer: number;
 
   @ForeignKey(() => Recipe)
   @Column

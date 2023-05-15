@@ -103,6 +103,7 @@ export class RecipeService {
         const step = new Step();
         step.description = stepData.description;
         step.timer = stepData.timer;
+        step.stepOutput = stepData.stepOutput;
         step.recipeId = recipe.id;
         await step.save();
         return step;
