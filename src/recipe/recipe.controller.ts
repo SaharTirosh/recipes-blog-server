@@ -1,7 +1,7 @@
-import { Controller, Get, Inject, forwardRef } from '@nestjs/common';
+import { Body, Controller, Get, Inject, Post, forwardRef } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { RecipeService } from './recipe.service';
-import { Recipe } from './database/Recipe.entity';
+import { Recipe } from './database/models/Recipe.entity';
 
 // @ApiTags('recipes')
 @Controller('recipe')
@@ -13,18 +13,18 @@ export class RecipeController {
     //     @Inject(forwardRef(() => RecipeService)) private recipeService: RecipeService,
     //   ) {} 
 
-    @Get()
-    getHello(): string {
-      return this.recipeService.getHello();
-    }
-
-    // @Post()
-    // async addRecipe(@Body() recipe: Recipe): Promise<Recipe> {
-    //   return this.recipeService.addRecipe(recipe);
-    // }
-  
     // @Get()
-    // async getAllRecipes(): Promise<Recipe[]> {
-    //   return this.recipeService.getAllRecipes();
+    // getHello(): string {
+    //   return this.recipeService.getHello();
     // }
+
+    @Post()
+    async addRecipe(@Body() recipe: Recipe): Promise<Recipe> {
+      return this.recipeService.addRecipe(recipe);
+    }
+  
+    @Get()
+    async getAllRecipes(): Promise<Recipe[]> {
+      return this.recipeService.getAllRecipes();
+    }
   }

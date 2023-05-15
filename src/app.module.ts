@@ -37,7 +37,7 @@ import { RecipeService } from './recipe/recipe.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { DatabaseModule } from './recipe/database/database.module';
 import { recipeProviders } from './recipe/database/recipes.providers';
-import { Recipe } from './recipe/database/Recipe.entity';
+// import { Recipe } from './recipe/database/Recipe.entity';
 import { databaseProviders } from './recipe/database/database.providers';
 
 @Module({

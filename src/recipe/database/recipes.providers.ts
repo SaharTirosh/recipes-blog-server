@@ -1,4 +1,6 @@
-import { Ingredient, Recipe, Step } from './Recipe.entity';
+import { Ingredient } from './models/Ingredient.Entity';
+import { Recipe } from './models/Recipe.entity';
+import { Step } from './models/Step.Entity';
 
 export const recipeProviders = [
   {
