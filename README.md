@@ -16,15 +16,6 @@ git clone https://github.com/[your-username]/recipes-blog-server.git
 cd recipes-blog-server
 npm install
 ```
-
-Then, start the server:
-
-```
-npm run start
-```
-
-The server will be listening on port 8080. You can access the API at `http://localhost:8080/api`.
-
 ## Database
 
 To use the server, you will need to have a database running. You can use the following command to start a MySQL database:
@@ -43,11 +34,14 @@ DB_PASSWORD=my-secret-pw
 DB_DATABASE=recipes
 ```
 
-You can then start the server as usual:
+Then, start the server:
 
 ```
 npm run start
 ```
+
+The server will be listening on port 8080. You can access the API at `http://localhost:8080/api`.
+
 
 The server will now be connected to the database and you can use it to manage recipes.
 
