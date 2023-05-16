@@ -76,7 +76,7 @@ This is an example of a JSON object that can be used to create a new recipe.
   "steps": [
     {
       "description": "Step 1 description",
-      "recipeOutput": "Step 1 output",
+      "stepOutput": "Step 1 output",
       "timer": 10,
       "ingredients": [
         {
